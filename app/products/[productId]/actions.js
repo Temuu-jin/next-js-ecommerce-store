@@ -13,7 +13,7 @@ export async function createCookie(productId, quantity) {
   });
 
   if (itemQuantityToUpdate) {
-    itemQuantityToUpdate.quantity = quantity;
+    itemQuantityToUpdate.quantity += parseInt(quantity);
   } else {
     addedQuantities.push({
       id: productId,
@@ -22,17 +22,4 @@ export async function createCookie(productId, quantity) {
   }
 
   await cookies().set('cart', JSON.stringify(addedQuantities));
-  // await cookies().set(
-  //   'quantity',
-  //   JSON.stringify([{ id: productId, quantity: quantity }]),
-  // );
 }
-
-// if (itemQuantityToUpdate) {
-//   itemQuantityToUpdate.quantity = quantity;
-// } else {
-//   addedQuantities.push({
-//     id: itemId,
-//     quantity: quantity,
-//   });
-// }

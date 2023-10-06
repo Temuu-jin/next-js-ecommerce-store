@@ -6,27 +6,6 @@ import styles from '../page.module.scss';
 export default function Products() {
   const products = getProducts();
   return (
-    // <main>
-    //   Products
-    //   {products.map((product) => {
-    //     return (
-    //       <div
-    //         key={`product-${product.id}`}
-    //         style={{ justifyContent: 'center', alignItems: 'center' }}
-    //       >
-    //         <Link href={`/products/${product.id}`}>
-    //           <Image
-    //             alt="Product"
-    //             src={product.image}
-    //             width={120}
-    //             height={100}
-    //           />
-    //           <h2>{product.name}</h2>
-    //         </Link>
-    //       </div>
-    //     );
-    //   })}
-    // </main>
     <main className={styles.main}>
       <h1 className={styles.pageTitle}>Products</h1>
 

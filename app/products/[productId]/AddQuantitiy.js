@@ -1,19 +1,19 @@
 'use client';
 import { useState } from 'react';
-import { createCookie } from './actions';
+import { setItemQuantityInCart } from './actions';
 
-export default function SetCookieForm(props) {
-  const [cookieValue, setCookieValue] = useState('');
+export default function AddQuantity(props) {
+  const [itemQuantity, setItemQuantity] = useState('');
 
   return (
     <form>
       <input
-        value={cookieValue}
-        onChange={(event) => setCookieValue(event.target.value)}
+        value={itemQuantity}
+        onChange={(event) => setItemQuantity(event.target.value)}
       />
       <button
         formAction={async () =>
-          await createCookie(props.productId, cookieValue)
+          await setItemQuantityInCart(props.productId, itemQuantity)
         }
       >
         {' '}

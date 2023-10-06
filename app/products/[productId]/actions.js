@@ -3,23 +3,30 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
-export async function createCookie(productId, quantity) {
+export async function setItemQuantityInCart(productId, quantity) {
+  // get the cookie called 'cart' save in cartCookie
   const cartCookie = getCookie('cart');
 
-  const addedQuantities = !cartCookie ? [] : parseJson(cartCookie);
+  // if no cartCookie make it empty array, otherwise parseJson to make it an array of objects
+  const jsonCart = !cartCookie ? [] : parseJson(cartCookie);
 
-  const itemQuantityToUpdate = addedQuantities.find((addedQuantity) => {
-    return addedQuantity.id === productId;
+  // find the item to be updated in cartCookie
+  const itemToUpdate = jsonCart.find((itemQuantity) => {
+    return itemQuantity.id === productId;
   });
 
-  if (itemQuantityToUpdate) {
-    itemQuantityToUpdate.quantity += parseInt(quantity);
+  // if the item exists, add quantity to its existing quantity
+  if (itemToUpdate) {
+    const updatedQuantity =
+      parseInt(itemToUpdate.quantity) + parseInt(quantity);
+    itemToUpdate.quantity = updatedQuantity;
   } else {
-    addedQuantities.push({
+    // if no object, push a new object to the cookie
+    jsonCart.push({
       id: productId,
       quantity: quantity,
     });
   }
 
-  await cookies().set('cart', JSON.stringify(addedQuantities));
+  await cookies().set('cart', JSON.stringify(jsonCart));
 }

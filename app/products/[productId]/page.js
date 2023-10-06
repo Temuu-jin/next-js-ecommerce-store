@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
-import SetCookieForm from './AddQuantitiy';
+import AddQuantity from './AddQuantitiy';
 
 export function generateMetadata({ params }) {
   const singleProduct = getProductById(Number(params.productId));
@@ -31,7 +31,7 @@ export default function ProductPage(props) {
         />
         <p>€ {singleProduct.price}</p>
       </div>
-      <SetCookieForm productId={props.params.productId} />
+      <AddQuantity productId={props.params.productId} />
     </main>
   );
 }

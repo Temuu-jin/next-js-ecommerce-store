@@ -1,21 +1,12 @@
-// go through logic!!!!!!!!!!
-
 import 'server-only';
 import { cache } from 'react';
 import { sql } from './connect';
 
-// export const products1 = [
-//   { id: 1, name: 'One', price: 30, rating: 4 },
-//   { id: 2, name: 'Two', price: 50, rating: 3 },
-//   { id: 3, name: 'Three', price: 90, rating: 2 },
-//   { id: 4, name: 'Four', price: 150, rating: 1 },
-//   { id: 5, name: 'Five', price: 250, rating: 5 },
-// ];
 type Product = {
   id: number;
   name: string;
-  price: number;
   description: string | null;
+  price: number;
 };
 
 export const getProducts = cache(async () => {
@@ -40,3 +31,18 @@ export const getProductById = cache(async (id: number) => {
 // export function getProduct(id: number) {
 //   return products1.find((product) => product.id === id);
 // }
+/* const products = [
+  { name: 'Salmon Aburi', description: 'This is product 1', price: 10 },
+  { name: 'Hosomaki', description: 'This is product 2', price: 11 },
+  { name: 'Uramaki', description: 'This is product 3', price: 12 },
+  { name: 'Temaki', description: 'This is product 4', price: 13 },
+];
+
+export function getProducts() {
+  return products;
+}
+
+export function getProductById(id: number) {
+  return products.find((product) => product.id === id);
+}
+ */

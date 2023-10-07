@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
 
 export default function ProductPage(props) {
   const singleProduct = getProductById(Number(props.params.productId));
-  console.log(props);
+  // console.log(props);
   if (!singleProduct) {
     return notFound();
   }

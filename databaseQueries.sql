@@ -1,3 +1,5 @@
+
+-- Create products table
 CREATE TABLE products (
 id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 name varchar(30) NOT NULL,
@@ -5,6 +7,7 @@ description varchar(200),
 price decimal(8,2) NOT NULL
 );
 
+-- Insert products
 INSERT INTO products
   (name, description, price)
 VALUES

@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import postgres from 'postgres';
+import { readFileSync } from 'fs';
 
 export function setEnvironmentVariables() {
   dotenv.config();
@@ -16,20 +16,3 @@ export function setEnvironmentVariables() {
     );
   }
 }
-
-setEnvironmentVariables();
-
-const sql = postgres();
-
-console.log(
-  await sql`
-  SELECT * FROM products;`,
-);
-await sql.end();
-
-[
-  { id: '1', quantity: '10' },
-  { id: '2', quantity: '2' },
-  { id: '3', quantity: 15 },
-  { id: '4', quantity: '4' },
-];

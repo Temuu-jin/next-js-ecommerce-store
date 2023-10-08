@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import styles from '../page.module.scss';
-import { setItemQuantity } from './actions';
 import DeleteItem from './DeleteItem';
 import QuantityMinus from './QuantityMinus';
 import QuantityPlus from './QuantityPlus';
@@ -54,7 +54,7 @@ export async function getProductsInCart() {
 export default async function Cart() {
   const productsInCart = await getProductsInCart();
 
-  let subTotal = 0;
+  let cartTotal = 0;
 
   return (
     <main className={styles.main}>
@@ -62,7 +62,7 @@ export default async function Cart() {
       <ul>
         {productsInCart.map((item) => {
           // Subtotal of all items combined
-          subTotal += item.price * item.quantity;
+          cartTotal += item.price * item.quantity;
 
           // save productPrice as a number
           const productPrice = item.price;
@@ -70,22 +70,24 @@ export default async function Cart() {
           // save productQuantity as a number
           const productQuantity = item.quantity;
 
-          const productTotal = item.total;
+          const subtotal = item.total;
 
           const productId = item.id;
 
           if (item.quantity > 0) {
             return (
-              <li key={item.id}>
+              <li key={item.id} data-test-id={`cart-product-${item.id}`}>
                 <div>
                   <h2>{item.name}</h2>
                   <p>Price: {productPrice}</p>
                   <div style={{ display: 'flex' }}>
                     <QuantityMinus productId={productId} />
-                    <h1>Quantity: {productQuantity}</h1>
+                    <h1 data-test-id={`cart-product-quantity-${item.id}`}>
+                      Quantity: {productQuantity}
+                    </h1>
                     <QuantityPlus productId={productId} />
                   </div>
-                  <p>Subtotal: {productTotal.toFixed(2)}</p>
+                  <p>Subtotal: {subtotal.toFixed(2)}</p>
                   {/* missing add or substract quantity buttons, checkout */}
                   <DeleteItem productId={productId} />
                 </div>
@@ -96,7 +98,12 @@ export default async function Cart() {
           }
         })}
       </ul>
-      <p>Total: {subTotal.toFixed(2)}</p>
+      <p>
+        Total: <span data-test-id="cart-total">{cartTotal.toFixed(2)}</span>
+      </p>
+      <Link href={'/checkout'}>
+        <button data-test-id="cart-checkout">Checkout</button>
+      </Link>
     </main>
   );
 }

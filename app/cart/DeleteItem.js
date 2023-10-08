@@ -5,7 +5,12 @@ export default function DeleteItem(props) {
   return (
     <div>
       <form>
-        <button formAction={() => deleteItem(props.productId)}>Delete</button>
+        <button
+          formAction={() => deleteItem(props.productId)}
+          data-test-id={`cart-product-remove-${props.productId}`}
+        >
+          Delete
+        </button>
       </form>
     </div>
   );

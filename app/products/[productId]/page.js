@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
+import styles from '../../page.module.scss';
 import AddQuantity from './AddQuantitiy';
 
 export async function generateMetadata({ params }) {
@@ -18,18 +19,18 @@ export default async function ProductPage(props) {
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       Product
-      <div>
-        <h1>{singleProduct.name}</h1>
-        <p>{singleProduct.description}</p>
+      <div className={styles.card}>
+        <h1 className={styles.center}>{singleProduct.name}</h1>
+        <p className={styles.center}>{singleProduct.description}</p>
         <img
           src={singleProduct.image}
           alt={singleProduct.name}
           width={200}
           height={200}
         />
-        <p>€ {singleProduct.price}</p>
+        <p className={styles.center}>€ {singleProduct.price}</p>
       </div>
       <AddQuantity productId={props.params.productId} />
     </main>

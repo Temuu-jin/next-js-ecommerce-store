@@ -8,7 +8,7 @@ export default function Checkout() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h1 className={styles.pageTitle}>Thank You!</h1>
+        <h1 className={styles.pageTitle}>Thank you for your order</h1>
         <br />
 
         <p className={styles.center}>Thank you, come again!</p>

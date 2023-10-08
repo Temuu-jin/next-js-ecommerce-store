@@ -1,6 +1,8 @@
 import './globals.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { getCookie } from '../util/cookies';
+import { parseJson } from '../util/json';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,16 +12,36 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  let totalQuantity = 0;
+  const cartCookie = getCookie('cart');
+  const cart = cartCookie ? parseJson(cartCookie) : [];
+  cart.forEach((item) => {
+    console.log('item', item);
+    totalQuantity += parseInt(item.quantity);
+  });
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/cart">Cart</Link>
-        </nav>
+        <header>
+          <nav>
+            <Link href="/">Home</Link>
+            <Link href="/products">Products</Link>
+            <Link data-test-id="cart-link" href="/cart">
+              Cart <span data-test-id="cart-count">{totalQuantity}</span>
+            </Link>
+          </nav>
+        </header>
         {children}
       </body>
     </html>
   );
 }
+/*
+A header with a link to the Cart, showing the number of items in the cart
+This header needs to appear on all pages
+The header needs to use the HTML <header> element
+The number of items is the sum of the quantity of all products (eg. if you have 2 apples and 3 bananas in your cart, the number of items is 5)
+The number of items needs to update when you add or remove items from the cart
+The link needs to have an HTML attribute data-test-id="cart-link"
+The count needs to be contained in an element with the HTML attribute data-test-id="cart-count" */

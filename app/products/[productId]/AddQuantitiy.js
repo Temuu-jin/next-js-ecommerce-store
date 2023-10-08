@@ -17,7 +17,7 @@ export default function AddQuantity(props) {
         }
       >
         {' '}
-        Set Cookie{' '}
+        Add to Cart{' '}
       </button>
     </form>
   );

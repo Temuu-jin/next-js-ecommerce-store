@@ -11,8 +11,8 @@ export async function setItemQuantityInCart(productId, quantity) {
   const jsonCart = !cartCookie ? [] : parseJson(cartCookie);
 
   // find the item to be updated in cartCookie
-  const itemToUpdate = jsonCart.find((itemQuantity) => {
-    return itemQuantity.id === productId;
+  const itemToUpdate = jsonCart.find((item) => {
+    return item.id === productId;
   });
 
   // if the item exists, add quantity to its existing quantity

@@ -5,6 +5,7 @@ import { sql } from './connect';
 type Product = {
   id: number;
   name: string;
+  image: string;
   description: string | null;
   price: number;
 };

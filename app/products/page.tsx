@@ -9,7 +9,7 @@ export default async function Products() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.pageTitle}>Products</h1>
+      <h1>Products</h1>
       <ul className={styles.productGrid}>
         {products.map((product) => {
           return (

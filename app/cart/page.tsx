@@ -1,6 +1,5 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import React from 'react';
 import { getProducts } from '../../database/products';
 import { Product } from '../../migrations/00000-createTableProducts';
 import styles from '../page.module.scss';

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import styles from '../../page.module.scss';
+import styles from '../page.module.scss';
 import { setItemQuantityInCart } from './actions';
 
 export default function ChangeQuantity(props) {

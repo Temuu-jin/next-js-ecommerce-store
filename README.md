@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Testing
+
+## Requirements
+
+This project should also include tests written for the following functionality:
+
+E2E: Add to cart, change quantity and remove from cart
+E2E: Checkout flow, payment page, thank you page
+Unit: Test function that combines the product data from the database with the product quantity data from your cookie
+Unit: Test function for updating quantity in item of cookie (eg. adding an item to the cart that already exists)
+Unit: Test cart sum function
+Set up GitHub Actions to automatically test your code

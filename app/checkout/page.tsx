@@ -1,4 +1,3 @@
-import React from 'react';
 import { getProductsInCart } from '../cart/page';
 import styles from '../page.module.scss';
 import CheckoutButton from './Checkout';

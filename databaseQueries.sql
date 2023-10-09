@@ -12,8 +12,8 @@ price decimal(8,2) NOT NULL
 INSERT INTO products
   (name, image, description, price)
 VALUES
-  ('Salmon Aburi', '/aburi.jpg', 'This is product 1', 9.99),
-  ('Hosomaki', '/hosomaki.jpg', 'This is product 2', 10.99),
-  ('Uramaki', '/uramaki.jpg', 'This is product 3', 11.99),
-  ('Temaki', '/temaki.jpg', 'This is product 4', 12.99)
+  ('Aburi', '/aburi.jpg', 'Im a Sake Aburi', 9.99),
+  ('Hosomaki', '/hosomaki.jpg', 'Im a Hosomaki', 10.99),
+  ('Uramaki', '/uramaki.jpg', 'Im a Uramaki', 11.99),
+  ('Temaki', '/temaki.jpg', 'Im a Temaki', 12.99)
 ;

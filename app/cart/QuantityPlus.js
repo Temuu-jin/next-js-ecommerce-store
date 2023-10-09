@@ -1,4 +1,5 @@
 'use client';
+import styles from '../page.module.scss';
 import { quantityPlus } from './actions';
 
 export default function QuantityPlus(props) {
@@ -6,7 +7,12 @@ export default function QuantityPlus(props) {
   return (
     <div>
       <form>
-        <button formAction={() => quantityPlus(props.productId)}>+1</button>
+        <button
+          className={styles.btn2}
+          formAction={() => quantityPlus(props.productId)}
+        >
+          +1
+        </button>
       </form>
     </div>
   );

@@ -1,16 +1,26 @@
-* {
-  margin: 20;
-  padding: 20;
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+ul {
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
 }
 
 body {
-  background-color: teal;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #0a0a0a;
+  line-height: 1.4;
 }
-
 nav {
   width: 100vw;
   height: 4rem;
-  background: tan;
+  background: #f6f9fc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -18,4 +28,21 @@ nav {
   > a {
     margin: 4px;
   }
+}
+
+a {
+  color: #000;
+}
+img {
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+}
+
+header {
+  background-color: #f6f9fc;
+}
+
+input[type='text'] {
+  display: initial;
+  padding: 15px;
 }

@@ -1,7 +1,7 @@
 'use server';
 import { cookies } from 'next/headers';
-import { getCookie } from '../../../util/cookies';
-import { parseJson } from '../../../util/json';
+import { getCookie } from '../../../util/cookies.ts';
+import { parseJson } from '../../../util/json.ts';
 
 export async function setItemQuantityInCart(productId, quantity) {
   // get the cookie called 'cart' save in cartCookie

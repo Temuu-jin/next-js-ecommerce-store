@@ -16,7 +16,7 @@ export default function AddQuantity(props) {
         onChange={(event) => setItemQuantity(event.target.value)}
       />
       <button
-        className={styles.center}
+        className={styles.btn}
         formAction={async () =>
           await setItemQuantityInCart(props.productId, itemQuantity)
         }

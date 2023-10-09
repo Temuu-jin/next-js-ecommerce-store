@@ -1,11 +1,13 @@
 'use client';
+import styles from '../page.module.scss';
 import { clearCart } from './actions';
 
 export default function CheckoutButton() {
-  let total = 0;
   return (
     <form>
-      <button formAction={() => clearCart()}>Confirm Order</button>
+      <button className={styles.btn} formAction={() => clearCart()}>
+        Confirm Order
+      </button>
     </form>
   );
 }

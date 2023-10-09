@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h1 className={styles.pageTitle}>Welcome to Yazu OnlineStore</h1>
+        <h1>Welcome to Yazu OnlineStore</h1>
         <br />
 
         <p className={styles.center}>Order Sushi Online</p>

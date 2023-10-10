@@ -6,7 +6,7 @@ import { parseJson } from '../../util/json';
 export async function deleteItem(productId) {
   console.log('this product is being deleted', productId);
   // get cookie
-  const cartCookie = getCookie('cart');
+  const cartCookie = await getCookie('cart');
 
   // if no cartCookie make it empty array, otherwise parseJson to make it an array of objects
   const jsonCart = !cartCookie ? [] : parseJson(cartCookie);
@@ -24,7 +24,7 @@ export async function deleteItem(productId) {
 
 export async function changeQuantity(productId) {
   // get cookie with quantity
-  const cartCookie = parseJson(getCookie('cart'));
+  const cartCookie = await parseJson(getCookie('cart'));
   const productCookie = cartCookie.find((item) => {
     const itemId = parseInt(item.id);
     if (itemId === productId) {
@@ -32,9 +32,6 @@ export async function changeQuantity(productId) {
     }
   });
   console.log('this product is being changed', productCookie);
-  // quantity += 1
-
-  //quantity -+ 1
 }
 
 export async function quantityPlus(productId) {

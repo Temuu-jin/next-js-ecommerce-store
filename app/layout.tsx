@@ -35,8 +35,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <header>
           <nav>
             <Link href="/">Home</Link>
-            <Link href={{ pathname: '/products' }}>Products</Link>
-            <Link href={{ pathname: '/cart' }} data-test-id="cart-link">
+            <Link href="/products">Products</Link>
+            <Link href="/cart" data-test-id="cart-link">
               Cart <span data-test-id="cart-count">{totalQuantity}</span>
             </Link>
           </nav>

@@ -118,7 +118,7 @@ export default async function Cart() {
       <p>
         Total: <span data-test-id="cart-total">{cartTotal.toFixed(2)}</span>
       </p>
-      <Link href={'/checkout'}>
+      <Link href="/checkout">
         <button className={styles.btn} data-test-id="cart-checkout">
           Checkout
         </button>

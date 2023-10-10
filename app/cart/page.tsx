@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getProductsInCart } from '../functions';
 import styles from '../page.module.scss';
 import DeleteItem from './DeleteItem';
+import Minus from './Minus';
+import Plus from './Plus';
 
 export default async function Cart() {
   const productsInCart = await getProductsInCart();
@@ -15,7 +17,6 @@ export default async function Cart() {
         {productsInCart.map((item) => {
           cartTotal += item.price * item.quantity;
 
-          console.log(item.total.toFixed(2));
           if (item.quantity > 0) {
             return (
               <li
@@ -27,18 +28,9 @@ export default async function Cart() {
                   <h4 className={styles.cartItemName}>{item.name}</h4>
                   <p>Price: {item.price}</p>
                   <div style={{ display: 'flex' }}>
-                    {/* <QuantityMinus productId={productId} />
-                    <p data-test-id={`cart-product-quantity-${item.id}`}>
-                      Quantity: {productQuantity}
-                    </p>
-                    <QuantityPlus productId={productId} /> */}
-                    {/* <ChangeQuantity
-                      productId={item.id}
-                      initQuantity={item.quantity}
-                    /> */}
-                    <p data-test-id={`cart-product-quantity-${item.id}`}>
-                      Quantity: {item.quantity}
-                    </p>
+                    <Minus productId={item.id} />
+                    Quantity: {item.quantity}
+                    <Plus productId={item.id} />
                   </div>
                   <p>Subtotal: {item.total}</p>
                   <DeleteItem productId={item.id} />

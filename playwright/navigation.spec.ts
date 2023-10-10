@@ -24,7 +24,7 @@ test('Cart Test', async ({ page }) => {
   await expect(page.getByTestId('cart-count')).toHaveText('0');
 });
 
-//E2E: Checkout flow, payment page, thank you page
+// E2E: Checkout flow, payment page, thank you page
 test('Checkout Test', async ({ page }) => {
   await page.goto('http://localhost:3000/products');
   // click on product 1

@@ -25,8 +25,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const cartCookie = getCookie('cart');
   const cart = cartCookie ? parseJson(cartCookie) : [];
   cart.forEach((item: CartItem) => {
-    console.log('item', item);
-    totalQuantity += parseInt(item.quantity.toString());
+    totalQuantity += item.quantity;
   });
 
   return (

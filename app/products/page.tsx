@@ -14,17 +14,14 @@ export default async function Products() {
         {products.map((product) => {
           return (
             <li key={`product-${product.id}`} className={styles.card}>
-              <Link
-                href={`/products/${product.id}`}
-                data-test-id={`product-${product.id}`}
-              >
-                <Image
-                  alt="Product"
-                  src={product.image}
-                  width={120}
-                  height={100}
-                />
-                <h2>{product.name}</h2>
+              <Image
+                alt="Product"
+                src={product.image}
+                width={120}
+                height={100}
+              />
+              <Link href={`/products/${product.id}`}>
+                <h2 data-test-id={`product-${product.id}`}>{product.name}</h2>
               </Link>
             </li>
           );

@@ -1,72 +1,7 @@
-import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { getProducts } from '../../database/products';
-import { Product } from '../../migrations/00000-createTableProducts';
+import { getProductsInCart } from '../functions';
 import styles from '../page.module.scss';
 import DeleteItem from './DeleteItem';
-
-type CartItem = {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  total: number;
-};
-
-type CookieObject = {
-  id: string;
-  quantity: string;
-};
-
-export function getParsedCart(): CookieObject[] {
-  const cartCookieString = cookies().get('cart');
-  return cartCookieString
-    ? cartCookieString.value
-      ? JSON.parse(cartCookieString.value)
-      : []
-    : [];
-}
-
-export async function getProductsInCart(): Promise<CartItem[]> {
-  try {
-    const cartData: CookieObject[] = getParsedCart(); // should be type  CookieObject[]
-    const products: Product[] = await getProducts();
-
-    const cartProductsWithQuantity = cartData.map((cartItem) => {
-      const productId = parseInt(cartItem.id); // Convert cartItem.id to an integer for matching.
-      const product: Product = products.find(
-        (p: Product) => p.id === productId,
-      )!;
-      const productPrice: number = parseFloat(product.price.toString());
-
-      const quantity = parseInt(cartItem.quantity);
-      const totalPrice = productPrice * quantity;
-
-      if (!product) {
-        // Handle the case where the product is not found, e.g., by returning a default value or skipping this item
-        return null; // You can return null, undefined, or another appropriate value
-      }
-
-      return {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        quantity: quantity,
-        total: totalPrice,
-      } as CartItem;
-    });
-    // Filter out null values and assign the result to a new variable of type CartItem[]
-    const filteredCartProductsWithQuantity: CartItem[] =
-      cartProductsWithQuantity.filter(
-        (item): item is CartItem => item !== null,
-      );
-
-    return filteredCartProductsWithQuantity;
-  } catch (error) {
-    console.error('Error:', error);
-    throw error;
-  }
-}
 
 export default async function Cart() {
   const productsInCart = await getProductsInCart();
@@ -85,7 +20,7 @@ export default async function Cart() {
             return (
               <li
                 className={styles.card}
-                key={item.id}
+                key={`user-${item.id}`}
                 data-test-id={`cart-product-${item.id}`}
               >
                 <div>
@@ -118,10 +53,12 @@ export default async function Cart() {
       <p>
         Total: <span data-test-id="cart-total">{cartTotal.toFixed(2)}</span>
       </p>
-      <Link href="/checkout">
-        <button className={styles.btn} data-test-id="cart-checkout">
-          Checkout
-        </button>
+      <Link
+        href="/checkout"
+        className={styles.btn}
+        data-test-id="cart-checkout"
+      >
+        Checkout
       </Link>
     </main>
   );

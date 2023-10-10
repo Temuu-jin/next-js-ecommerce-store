@@ -5,7 +5,11 @@ import { clearCart } from './actions';
 export default function CheckoutButton() {
   return (
     <form>
-      <button className={styles.btn} formAction={() => clearCart()}>
+      <button
+        data-test-id="checkout-confirm-order"
+        className={styles.btn}
+        formAction={() => clearCart()}
+      >
         Confirm Order
       </button>
     </form>

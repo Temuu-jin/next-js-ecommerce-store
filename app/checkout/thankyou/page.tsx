@@ -14,8 +14,8 @@ export default function Checkout() {
 
         <p className={styles.center}>Thank you, come again!</p>
         <br />
-        <Link href={'/products'}>
-          <button>Continue Shopping</button>
+        <Link href="/products" data-test-id="continue-shopping">
+          Continue Shopping
         </Link>
       </div>
     </main>

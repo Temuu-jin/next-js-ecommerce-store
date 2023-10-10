@@ -1,4 +1,4 @@
-import { getProductsInCart } from '../cart/page';
+import { getProductsInCart } from '../functions';
 import styles from '../page.module.scss';
 import CheckoutButton from './Checkout';
 
@@ -22,14 +22,12 @@ export default async function Checkout() {
         <form>
           <input
             className={styles.input}
-            type="text"
             placeholder="First Name"
             data-test-id="checkout-first-name"
           />
           <br />
           <input
             className={styles.input}
-            type="text"
             placeholder="Last Name"
             data-test-id="checkout-last-name"
           />
@@ -43,28 +41,24 @@ export default async function Checkout() {
           <br />
           <input
             className={styles.input}
-            type="text"
             placeholder="Address"
             data-test-id="checkout-address"
           />
           <br />
           <input
             className={styles.input}
-            type="text"
             placeholder="City"
             data-test-id="checkout-city"
           />
           <br />
           <input
             className={styles.input}
-            type="text"
             placeholder="Postal Code"
             data-test-id="checkout-postal-code"
           />
           <br />
           <input
             className={styles.input}
-            type="text"
             placeholder="Country"
             data-test-id="checkout-country"
           />
@@ -80,7 +74,6 @@ export default async function Checkout() {
                 <div className={styles.field}>
                   <div className={styles.title}>Credit Card Number</div>
                   <input
-                    type="text"
                     className={`${styles.input} txt text-validated`}
                     value="4542 9931 9292 2293"
                     data-test-id="checkout-credit-card"
@@ -91,7 +84,7 @@ export default async function Checkout() {
                 <div className={`${styles.field} small`}>
                   <div className={styles.title}>Expiry Date</div>
                   <select
-                    data-test-id="checkout-expiration-date"
+                    data-test-id="checkout-expiration-date1"
                     className={`${styles.input} ddl`}
                   >
                     <option selected>01</option>
@@ -108,7 +101,7 @@ export default async function Checkout() {
                     <option>12</option>
                   </select>
                   <select
-                    data-test-id="checkout-expiration-date"
+                    data-test-id="checkout-expiration-date2"
                     className={`${styles.input} ddl`}
                   >
                     <option>01</option>
@@ -126,7 +119,7 @@ export default async function Checkout() {
                     <option>13</option>
                     <option>14</option>
                     <option>15</option>
-                    <option selected>16</option>
+                    <option>16</option>
                     <option>17</option>
                     <option>18</option>
                     <option>19</option>
@@ -136,7 +129,7 @@ export default async function Checkout() {
                     <option>23</option>
                     <option>24</option>
                     <option>25</option>
-                    <option>26</option>
+                    <option selected>26</option>
                     <option>27</option>
                     <option>28</option>
                     <option>29</option>
@@ -148,7 +141,6 @@ export default async function Checkout() {
                   <div className={styles.title}>CVV Code</div>
                   <input
                     data-test-id="checkout-security-code"
-                    type="text"
                     className={`${styles.input} txt`}
                   />
                 </div>
@@ -156,7 +148,10 @@ export default async function Checkout() {
               <div className={styles.row}>
                 <div className={styles.field}>
                   <div className={styles.title}>Name on Card</div>
-                  <input type="text" className={`${styles.input} txt`} />
+                  <input
+                    data-test-id="checkout-name-on-card"
+                    className={`${styles.input} txt`}
+                  />
                 </div>
               </div>
             </div>
@@ -167,7 +162,7 @@ export default async function Checkout() {
       <br />
       <div className={styles.btn}>Total: {cartTotal.toFixed(2)}</div>
       <br />
-      <CheckoutButton data-test-id="checkout-confirm-order" />
+      <CheckoutButton  />
     </main>
   );
 }

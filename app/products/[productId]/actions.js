@@ -17,8 +17,7 @@ export async function setItemQuantityInCart(productId, quantity) {
 
   // if the item exists, add quantity to its existing quantity
   if (itemToUpdate) {
-    const updatedQuantity =
-      parseInt(itemToUpdate.quantity) + parseInt(quantity);
+    const updatedQuantity = itemToUpdate.quantity + quantity;
     itemToUpdate.quantity = updatedQuantity;
   } else {
     // if no object, push a new object to the cookie

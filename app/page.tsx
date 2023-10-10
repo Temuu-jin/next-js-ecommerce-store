@@ -11,7 +11,7 @@ export default function Home() {
         <p className={styles.center}>Order Sushi Online</p>
         <br />
 
-        <Link href={'/products'} className={styles.center}>
+        <Link href="/products" className={styles.center}>
           Order Now!
         </Link>
       </div>

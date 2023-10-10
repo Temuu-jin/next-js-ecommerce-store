@@ -3,16 +3,6 @@ import { getProductById } from '../../../database/products';
 import styles from '../../page.module.scss';
 import AddQuantity from './AddQuantitiy';
 
-type Product = {
-  // Define the properties of the Product type here
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  // Add other properties as needed
-};
-
 type ProductPageProps = {
   params: {
     productId: string;

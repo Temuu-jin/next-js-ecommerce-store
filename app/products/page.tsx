@@ -14,8 +14,8 @@ export default async function Products() {
         {products.map((product) => {
           return (
             <li
-              data-test-id={`cart-product-${product.id}`}
-              key={`cart-product-${product.id}`}
+              data-test-id={`product-${product.id}`}
+              key={`product-${product.id}`}
               className={styles.card}
             >
               <Image

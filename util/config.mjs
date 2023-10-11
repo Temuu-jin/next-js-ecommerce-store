@@ -1,5 +1,5 @@
+import { readFileSync } from 'node:fs';
 import dotenv from 'dotenv';
-import { readFileSync } from 'fs';
 
 export function setEnvironmentVariables() {
   dotenv.config();

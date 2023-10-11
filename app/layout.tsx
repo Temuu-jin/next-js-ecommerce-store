@@ -32,7 +32,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <header>
           <nav>
             <Link href="/">Home</Link>
-            <Link href="/products">Products</Link>
+            <Link data-test-id="products-link" href="/products">
+              Products
+            </Link>
             <Link href="/cart" data-test-id="cart-link">
               Cart <span data-test-id="cart-count">{totalQuantity}</span>
             </Link>

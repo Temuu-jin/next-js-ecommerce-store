@@ -13,7 +13,11 @@ export default async function Products() {
       <ul className={styles.productGrid}>
         {products.map((product) => {
           return (
-            <li key={`product-${product.id}`} className={styles.card}>
+            <li
+              data-test-id={`cart-product-${product.id}`}
+              key={`cart-product-${product.id}`}
+              className={styles.card}
+            >
               <Image
                 alt="Product"
                 src={product.image}

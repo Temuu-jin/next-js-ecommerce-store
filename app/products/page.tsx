@@ -10,27 +10,21 @@ export default async function Products() {
   return (
     <main className={styles.main}>
       <h1>Products</h1>
-      <ul className={styles.productGrid}>
-        {products.map((product) => {
-          return (
-            <li
-              data-test-id={`product-${product.id}`}
-              key={`product-${product.id}`}
-              className={styles.card}
-            >
+      {products.map((product) => {
+        return (
+          <div key={`product-div-${product.id}`}>
+            <Link href={`/products/${product.id}`}>
               <Image
                 alt="Product"
                 src={product.image}
                 width={120}
                 height={100}
               />
-              <Link href={`/products/${product.id}`}>
-                <h2 data-test-id={`product-${product.id}`}>{product.name}</h2>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+              <h2 data-test-id={`product-${product.id}`}>{product.name}</h2>
+            </Link>
+          </div>
+        );
+      })}
     </main>
   );
 }

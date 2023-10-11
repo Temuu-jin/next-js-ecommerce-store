@@ -51,7 +51,7 @@ export default async function ProductPage(props: ProductPageProps) {
           height={200}
           data-test-id="product-image"
         />
-        <p data-test-id="product-price">€ {singleProduct.price}</p>
+        €<p data-test-id="product-price">{singleProduct.price}</p>
       </div>
       <AddQuantity productId={productId} cookieData={cookieData} />
     </main>

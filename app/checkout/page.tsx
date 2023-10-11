@@ -54,7 +54,7 @@ export default async function Checkout() {
                 <option>12</option>
               </select>
               <select
-                data-test-id="checkout-expiration-date2"
+                data-test-id="checkout-expiration-date"
                 className={`${styles.input} ddl`}
               >
                 <option>01</option>

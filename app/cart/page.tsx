@@ -36,7 +36,10 @@ export default async function Cart() {
                   <p>Price: {item.price}</p>
                   <div style={{ display: 'flex' }}>
                     <Minus productId={item.id} />
-                    Quantity: {item.quantity}
+                    Quantity:{' '}
+                    <p data-test-id={`cart-product-quantity-${item.id}`}>
+                      {item.quantity}
+                    </p>
                     <Plus productId={item.id} />
                   </div>
                   <p>Subtotal: {item.quantity * item.price}</p>

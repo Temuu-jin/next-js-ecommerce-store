@@ -1,11 +1,7 @@
 import { cookies } from 'next/headers';
 
 export function getParsedCart() {
-  const cartCookieString = cookies().get('cart');
+  const cartCookieString = cookies().get('cart')?.value;
 
-  return cartCookieString
-    ? cartCookieString.value
-      ? JSON.parse(cartCookieString.value)
-      : []
-    : [];
+  return cartCookieString ? JSON.parse(cartCookieString) : [];
 }

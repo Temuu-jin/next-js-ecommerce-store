@@ -1,5 +1,12 @@
 import { cookies } from 'next/headers';
+import { CookieObject } from './types';
 
-export function getCookie(name: string): string | undefined {
-  return cookies().get(name)?.value;
+export function getParsedCart() {
+  const cartCookieString = cookies().get('cart');
+
+  return cartCookieString
+    ? cartCookieString.value
+      ? JSON.parse(cartCookieString.value)
+      : []
+    : [];
 }

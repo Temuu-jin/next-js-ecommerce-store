@@ -29,6 +29,9 @@ dependencies:
   next:
     specifier: 13.5.4
     version: 13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.0)
+  next-js-ecommerce-store:
+    specifier: 'link:'
+    version: 'link:'
   postgres:
     specifier: ^3.3.5
     version: 3.3.5

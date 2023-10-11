@@ -1,10 +1,15 @@
-import { getProductsInCart } from '../functions';
+import { getProducts } from '../../database/products';
+import { getParsedCart } from '../../util/cookies';
+import { getProductsInCart } from '../../util/functions';
+import { CookieObject, Product } from '../../util/types';
 import styles from '../page.module.scss';
 import CheckoutButton from './Checkout';
 
 export default async function Checkout() {
-  const productsInCart = await getProductsInCart();
+  const cartData: CookieObject[] = await getParsedCart();
+  const products: Product[] = await getProducts();
 
+  const productsInCart = await getProductsInCart(cartData, products);
   let cartTotal = 0;
 
   productsInCart.forEach((p) => {
@@ -162,7 +167,7 @@ export default async function Checkout() {
       <br />
       <div className={styles.btn}>Total: {cartTotal.toFixed(2)}</div>
       <br />
-      <CheckoutButton  />
+      <CheckoutButton />
     </main>
   );
 }

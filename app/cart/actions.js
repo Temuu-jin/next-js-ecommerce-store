@@ -1,13 +1,10 @@
 'use server';
 import { cookies } from 'next/headers';
-import { getCookie } from '../../util/cookies';
-import { parseJson } from '../../util/json';
+import { getParsedCart } from '../../util/cookies';
 
 export async function deleteItem(productId) {
   // get cookie
-  const cartCookie = await getCookie('cart');
-  // if no cartCookie make it empty array, otherwise parseJson to make it an array of objects
-  const jsonCart = !cartCookie ? [] : parseJson(cartCookie);
+  const jsonCart = await getParsedCart();
 
   // filter jsonCart to remove the item with productId
   const newCart = jsonCart.filter((item) => {
@@ -21,10 +18,7 @@ export async function deleteItem(productId) {
 }
 
 export async function quantityPlus(productId) {
-  const cartCookieString = await getCookie('cart');
-
-  const jsonCart = !cartCookieString ? [] : parseJson(cartCookieString);
-  // filter jsonCart to remove the item with productId
+  const jsonCart = await getParsedCart();
   const newCart = jsonCart.map((item) => {
     const itemId = parseInt(item.id);
 
@@ -39,9 +33,7 @@ export async function quantityPlus(productId) {
 }
 
 export async function quantityMinus(productId) {
-  const cartCookieString = await getCookie('cart');
-
-  const jsonCart = !cartCookieString ? [] : parseJson(cartCookieString);
+  const jsonCart = await getParsedCart();
 
   const itemToUpdate = jsonCart.find((item) => {
     return parseInt(item.id) === productId.productId;

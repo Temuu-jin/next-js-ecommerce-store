@@ -1,8 +1,7 @@
 import './globals.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { getCookie } from '../util/cookies';
-import { parseJson } from '../util/json';
+import { getParsedCart } from '../util/cookies';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,10 +19,9 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
   let totalQuantity = 0;
-  const cartCookie = getCookie('cart');
-  const cart = cartCookie ? parseJson(cartCookie) : [];
+  const cart = await getParsedCart();
   cart.forEach((item: CartItem) => {
     totalQuantity += item.quantity;
   });

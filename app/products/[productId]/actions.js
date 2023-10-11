@@ -1,31 +1,13 @@
 'use server';
 import { cookies } from 'next/headers';
-import { getCookie } from '../../../util/cookies.ts';
-import { parseJson } from '../../../util/json.ts';
+import { setItemQuantityInCart } from '../../../util/functions';
 
-export async function setItemQuantityInCart(productId, quantity) {
-  // get the cookie called 'cart' save in cartCookie
-  const cartCookie = getCookie('cart');
+export async function addToCart(productId, quantity, cookieData) {
+  const cartCookieData = await setItemQuantityInCart(
+    productId,
+    quantity,
+    cookieData,
+  );
 
-  // if no cartCookie make it empty array, otherwise parseJson to make it an array of objects
-  const jsonCart = !cartCookie ? [] : parseJson(cartCookie);
-
-  // find the item to be updated in cartCookie
-  const itemToUpdate = jsonCart.find((item) => {
-    return item.id === productId;
-  });
-
-  // if the item exists, add quantity to its existing quantity
-  if (itemToUpdate) {
-    const updatedQuantity = itemToUpdate.quantity + quantity;
-    itemToUpdate.quantity = updatedQuantity;
-  } else {
-    // if no object, push a new object to the cookie
-    jsonCart.push({
-      id: productId,
-      quantity: quantity,
-    });
-  }
-
-  await cookies().set('cart', JSON.stringify(jsonCart));
+  return cookies().set('cart', JSON.stringify(cartCookieData));
 }

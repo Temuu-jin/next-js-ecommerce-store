@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import styles from '../../page.module.scss';
-import { setItemQuantityInCart } from './actions';
+import { addToCart } from './actions';
 
 export default function AddQuantity(props) {
   const [itemQuantity, setItemQuantity] = useState(1);
@@ -20,7 +20,7 @@ export default function AddQuantity(props) {
         data-test-id="product-add-to-cart"
         className={styles.btn}
         formAction={async () =>
-          await setItemQuantityInCart(props.productId, itemQuantity)
+          await addToCart(props.productId, itemQuantity, props.cookieData)
         }
       >
         {' '}

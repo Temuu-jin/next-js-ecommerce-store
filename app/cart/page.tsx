@@ -1,22 +1,29 @@
 import Link from 'next/link';
-import { getProductsInCart } from '../functions';
+import { getProducts } from '../../database/products';
+import { getParsedCart } from '../../util/cookies';
+import { cartSum, getProductsInCart } from '../../util/functions';
+import { CartItem, CookieObject, Product } from '../../util/types';
 import styles from '../page.module.scss';
 import DeleteItem from './DeleteItem';
 import Minus from './Minus';
 import Plus from './Plus';
 
 export default async function Cart() {
-  const productsInCart = await getProductsInCart();
+  const cartData: CookieObject[] = await getParsedCart();
+  const products: Product[] = await getProducts();
 
-  let cartTotal = 0;
+  const productsInCart: CartItem[] = await getProductsInCart(
+    cartData,
+    products,
+  );
+
+  const cartTotal = cartSum(productsInCart);
 
   return (
     <main className={styles.main}>
       Cart
       <ul>
         {productsInCart.map((item) => {
-          cartTotal += item.price * item.quantity;
-
           if (item.quantity > 0) {
             return (
               <li
@@ -32,7 +39,7 @@ export default async function Cart() {
                     Quantity: {item.quantity}
                     <Plus productId={item.id} />
                   </div>
-                  <p>Subtotal: {item.total}</p>
+                  <p>Subtotal: {item.quantity * item.price}</p>
                   <DeleteItem productId={item.id} />
                 </div>
               </li>

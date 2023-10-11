@@ -2,9 +2,14 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-export function clearCart() {
+export async function clearCart() {
   // get cookie
 
-  cookies().delete('cart');
+  await cookies().delete('cart');
+  redirect('/checkout/thankyou');
+}
+
+export async function handleSubmit() {
+  await clearCart();
   redirect('/checkout/thankyou');
 }

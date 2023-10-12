@@ -12,7 +12,7 @@ export default async function Products() {
       <h1>Products</h1>
       {products.map((product) => {
         return (
-          <div key={`product-div-${product.id}`}>
+          <div className={styles.card} key={`productPage-${product.id}`}>
             <Link
               href={`/products/${product.id}`}
               data-test-id={`product-${product.id}`}

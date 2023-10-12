@@ -56,7 +56,7 @@ test('Checkout Test', async ({ page }) => {
   await page.getByTestId('checkout-postal-code').fill('10001');
   await page.getByTestId('checkout-country').fill('USA');
   await page.getByTestId('checkout-credit-card').fill('1234567890123456');
-  await page.getByTestId('checkout-expiration-date').selectOption('01/29');
+  await page.getByTestId('checkout-expiration-date').fill('01/29');
 
   await page.getByTestId('checkout-security-code').fill('123');
   await page.getByTestId('checkout-name-on-card').fill('John Doe');

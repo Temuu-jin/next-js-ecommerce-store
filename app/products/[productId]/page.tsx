@@ -51,6 +51,7 @@ export default async function ProductPage(props: ProductPageProps) {
           width={200}
           height={200}
           data-test-id="product-image"
+          unoptimized
         />
         €<p data-test-id="product-price">{singleProduct.price}</p>
       </div>

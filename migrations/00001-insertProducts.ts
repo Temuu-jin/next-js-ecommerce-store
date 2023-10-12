@@ -6,7 +6,7 @@ const products = [
     name: 'Aburi',
     image: '/aburi.avif',
     description: 'This is product 1',
-    price: 9.99,
+    price: 9.5,
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const products = [
     name: 'Uramaki',
     image: '/uramaki.avif',
     description: 'This is product 3',
-    price: 7.99,
+    price: 7.5,
   },
   {
     id: 4,

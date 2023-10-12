@@ -16,6 +16,7 @@ export default async function Products() {
             <Link
               href={`/products/${product.id}`}
               data-test-id={`product-${product.id}`}
+              rel="preload"
             >
               <Image
                 alt="Product"

@@ -43,5 +43,6 @@ else
     CREATE SCHEMA $PGUSERNAME AUTHORIZATION $PGUSERNAME;
 SQL
 fi
+pnpm migrate down
 pnpm migrate up
 ./node_modules/.bin/next start

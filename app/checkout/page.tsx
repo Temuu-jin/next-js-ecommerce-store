@@ -30,6 +30,7 @@ export default async function Checkout() {
                 className={`${styles.input} txt text-validated`}
                 defaultValue="4542 9931 9292 2293"
                 data-test-id="checkout-credit-card"
+                required
               />
             </div>
           </div>
@@ -39,6 +40,7 @@ export default async function Checkout() {
               <input
                 placeholder="MM/YY"
                 data-test-id="checkout-expiration-date"
+                required
                 className={`${styles.input} ddl`}
               />
             </div>
@@ -47,6 +49,7 @@ export default async function Checkout() {
               <input
                 data-test-id="checkout-security-code"
                 className={`${styles.input} txt`}
+                required
               />
             </div>
           </div>

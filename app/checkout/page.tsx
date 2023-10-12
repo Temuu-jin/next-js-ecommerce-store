@@ -37,6 +37,7 @@ export default async function Checkout() {
             <div className={`${styles.field} small`}>
               <div className={styles.title}>Expiry Date</div>
               <input
+                placeholder="MM/YY"
                 data-test-id="checkout-expiration-date"
                 className={`${styles.input} ddl`}
               />

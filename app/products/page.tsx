@@ -22,6 +22,7 @@ export default async function Products() {
                 src={product.image}
                 width={120}
                 height={100}
+                unoptimized
               />
               <h1>{product.name}</h1>
             </Link>

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
 import { getParsedCart } from '../../../util/cookies';
@@ -45,13 +45,12 @@ export default async function ProductPage(props: ProductPageProps) {
       <div className={styles.card}>
         <h1>{singleProduct.name}</h1>
         <p>{singleProduct.description}</p>
-        <Image
+        <img
           src={singleProduct.image}
           alt={singleProduct.name}
           width={200}
           height={200}
           data-test-id="product-image"
-          unoptimized
         />
         €<p data-test-id="product-price">{singleProduct.price}</p>
       </div>

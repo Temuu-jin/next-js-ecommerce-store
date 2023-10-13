@@ -35,12 +35,14 @@ test('Test function that combines the product data from the database with the pr
     {
       id: 1,
       name: 'test1',
+      image: 'test1.jpg',
       price: 100,
       quantity: 2,
     },
     {
       id: 2,
       name: 'test2',
+      image: 'test2.jpg',
       price: 200,
       quantity: 1,
     },

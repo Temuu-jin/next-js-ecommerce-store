@@ -10,25 +10,30 @@ export default async function Products() {
   return (
     <main className={styles.main}>
       <h1>Products</h1>
-      {products.map((product) => {
-        return (
-          <div className={styles.card} key={`productPage-${product.id}`}>
-            <Link
-              href={`/products/${product.id}`}
-              data-test-id={`product-${product.id}`}
+      <div className={styles['flex-container']}>
+        {products.map((product) => {
+          return (
+            <div
+              className={styles.productContainer}
+              key={`productPage-${product.id}`}
             >
-              <Image
-                alt="Product"
-                src={product.image}
-                width={120}
-                height={100}
-                unoptimized
-              />
-              <h1>{product.name}</h1>
-            </Link>
-          </div>
-        );
-      })}
+              <Link
+                href={`/products/${product.id}`}
+                data-test-id={`product-${product.id}`}
+              >
+                <Image
+                  alt="Product"
+                  src={product.image}
+                  width={120}
+                  height={100}
+                  unoptimized
+                />
+                <h1>{product.name}</h1>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </main>
   );
 }

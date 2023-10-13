@@ -20,3 +20,14 @@ export type CartItem = {
   price: number;
   quantity: number;
 };
+
+// All names of composerId's of each edition
+// A new object for each edition
+// editionId: number
+// composerNames: array of composerName Strings
+
+// editions.forEach((edition) => {
+// each edition you look for every composerId and save the names.
+// edition.composerNames = [strings];
+// extract numbers from strings?
+// })

@@ -41,7 +41,6 @@ export default async function ProductPage(props: ProductPageProps) {
 
   return (
     <main className={styles.main}>
-      Product
       <div className={styles.card}>
         <h1>{singleProduct.name}</h1>
         <p>{singleProduct.description}</p>

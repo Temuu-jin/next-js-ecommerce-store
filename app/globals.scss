@@ -1,4 +1,6 @@
-*,
+* {
+  color: #eeeeee;
+}
 *:after,
 *:before {
   box-sizing: border-box;
@@ -14,13 +16,15 @@ li {
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-  color: #0a0a0a;
   line-height: 1.4;
+  background-image: url('/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 nav {
   width: 100vw;
   height: 4rem;
-  background: #f6f9fc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -30,19 +34,24 @@ nav {
   }
 }
 
-a {
-  color: #000;
-}
 img {
-  width: 100%;
-  border-radius: 8px 0 0 8px;
-}
-
-header {
-  background-color: #f6f9fc;
+  width: 110px;
+  height: 100px;
+  border-radius: 5%;
 }
 
 input[type='text'] {
   display: initial;
   padding: 15px;
+  color: black;
+}
+
+input[type='number'] {
+  color: black;
+  width: 100%;
+  align-items: center;
+}
+
+button {
+  color: black;
 }

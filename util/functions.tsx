@@ -53,6 +53,7 @@ export async function setItemQuantityInCart(
   }
   return cookieData;
 }
+
 export function cartSum(productsInCart: CartItem[]) {
   let sum = 0;
   productsInCart.forEach((p) => {

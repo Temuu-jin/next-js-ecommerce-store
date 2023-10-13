@@ -32,6 +32,15 @@ export default async function Cart() {
                 data-test-id={`cart-product-${item.id}`}
               >
                 <div>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    width={200}
+                    height={200}
+                    data-test-id={`cart-product-image-${item.id}`}
+                  />
+                </div>
+                <div>
                   <h4 className={styles.cartItemName}>{item.name}</h4>
                   <p>Price: {item.price}</p>
                   <div style={{ display: 'flex' }}>

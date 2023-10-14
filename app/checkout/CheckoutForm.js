@@ -1,5 +1,4 @@
 'use client';
-import styles from '../page.module.scss';
 import { handleSubmit } from './actions';
 
 export default function CheckoutForm() {

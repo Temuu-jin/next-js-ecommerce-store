@@ -2,7 +2,6 @@ import { getProducts } from '../../database/products';
 import { getParsedCart } from '../../util/cookies';
 import { getProductsInCart } from '../../util/functions';
 import { CookieObject, Product } from '../../util/types';
-import styles from '../page.module.scss';
 import CheckoutForm from './CheckoutForm';
 
 export default async function Checkout() {

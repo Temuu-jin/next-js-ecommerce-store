@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import styles from '../../page.module.scss';
 import { addToCart } from './actions';
 
 export default function AddQuantity(props) {
@@ -10,7 +9,6 @@ export default function AddQuantity(props) {
     <form>
       <input
         data-test-id="product-quantity"
-        className={styles.center}
         type="number"
         min={1}
         value={itemQuantity}
@@ -18,7 +16,6 @@ export default function AddQuantity(props) {
       />
       <button
         data-test-id="product-add-to-cart"
-        className={styles.btn}
         formAction={async () =>
           await addToCart(props.productId, itemQuantity, props.cookieData)
         }

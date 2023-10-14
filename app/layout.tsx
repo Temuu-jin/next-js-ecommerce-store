@@ -1,4 +1,3 @@
-import './globals.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { getParsedCart } from '../util/cookies';

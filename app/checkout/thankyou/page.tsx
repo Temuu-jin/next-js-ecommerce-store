@@ -3,7 +3,6 @@ The page title should include Thank you for your order
  */
 import Link from 'next/link';
 import React from 'react';
-import styles from '../../page.module.scss';
 
 export const metadata = {
   title: 'Thank you for your order',
@@ -12,7 +11,7 @@ export const metadata = {
 
 export default function Checkout() {
   return (
-    <main className={styles.main}>
+    <main>
       <div>
         <h1>Thank you for your order</h1>
         <br />

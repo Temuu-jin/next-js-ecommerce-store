@@ -46,72 +46,46 @@ export default async function Checkout() {
             </div>
             <div className={`${styles.field} small`}>
               <div className={styles.title}>CVV Code</div>
-              <input
-                data-test-id="checkout-security-code"
-                className={`${styles.input} txt`}
-                required
-              />
+              <input data-test-id="checkout-security-code" required />
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.field}>
               <div className={styles.title}>Name on Card</div>
-              <input
-                data-test-id="checkout-name-on-card"
-                className={`${styles.input} txt`}
-              />
+              <input data-test-id="checkout-name-on-card" />
             </div>
           </div>
         </div>
         <input
-          className={styles.input}
           placeholder="First Name"
           required
           data-test-id="checkout-first-name"
         />
         <br />
         <input
-          className={styles.input}
           placeholder="Last Name"
           data-test-id="checkout-last-name"
           required
         />
         <br />
         <input
-          className={styles.input}
           type="email"
           placeholder="Email"
           data-test-id="checkout-email"
           required
         />
         <br />
-        <input
-          className={styles.input}
-          placeholder="Address"
-          data-test-id="checkout-address"
-          required
-        />
+        <input placeholder="Address" data-test-id="checkout-address" required />
+        <br />
+        <input placeholder="City" data-test-id="checkout-city" required />
         <br />
         <input
-          className={styles.input}
-          placeholder="City"
-          data-test-id="checkout-city"
-          required
-        />
-        <br />
-        <input
-          className={styles.input}
           placeholder="Postal Code"
           data-test-id="checkout-postal-code"
           required
         />
         <br />
-        <input
-          className={styles.input}
-          placeholder="Country"
-          data-test-id="checkout-country"
-          required
-        />
+        <input placeholder="Country" data-test-id="checkout-country" required />
         <br />
 
         <CheckoutForm />

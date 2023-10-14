@@ -40,8 +40,8 @@ export default async function ProductPage(props: ProductPageProps) {
   }
 
   return (
-    <main className={styles.main}>
-      <div className={styles.card}>
+    <main>
+      <div>
         <h1>{singleProduct.name}</h1>
         <p>{singleProduct.description}</p>
         <Image

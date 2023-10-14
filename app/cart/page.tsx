@@ -18,16 +18,15 @@ export default async function Cart() {
   );
 
   const cartTotal = cartSum(productsInCart);
-
+  console.log(productsInCart.length);
   return (
-    <main className={styles.main}>
+    <main>
       Cart
       <ul>
         {productsInCart.map((item) => {
           if (item.quantity > 0) {
             return (
               <li
-                className={styles.card}
                 key={`user-${item.id}`}
                 data-test-id={`cart-product-${item.id}`}
               >
@@ -41,7 +40,7 @@ export default async function Cart() {
                   />
                 </div>
                 <div>
-                  <h4 className={styles.cartItemName}>{item.name}</h4>
+                  <h4>{item.name}</h4>
                   <p>Price: {item.price}</p>
                   <div style={{ display: 'flex' }}>
                     <Minus productId={item.id} />
@@ -64,11 +63,7 @@ export default async function Cart() {
       <p>
         Total: <span data-test-id="cart-total">{cartTotal.toFixed(2)}</span>
       </p>
-      <Link
-        href="/checkout"
-        className={styles.btn}
-        data-test-id="cart-checkout"
-      >
+      <Link href="/checkout" data-test-id="cart-checkout">
         Checkout
       </Link>
     </main>

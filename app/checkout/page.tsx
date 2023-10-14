@@ -17,41 +17,39 @@ export default async function Checkout() {
   });
 
   return (
-    <main className={styles.main}>
+    <main>
       <h1>Checkout</h1>
       <h4>Welcome to Checkout</h4>
-      <div className={styles.btn}>Total: {cartTotal.toFixed(2)}</div>
+      <div>Total: {cartTotal.toFixed(2)}</div>
       <form>
-        <div className={styles.payment__cc}>
-          <div className={styles.row}>
-            <div className={styles.field}>
-              <div className={styles.title}>Credit Card Number</div>
+        <div>
+          <div>
+            <div>
+              <div>Credit Card Number</div>
               <input
-                className={`${styles.input} txt text-validated`}
                 defaultValue="4542 9931 9292 2293"
                 data-test-id="checkout-credit-card"
                 required
               />
             </div>
           </div>
-          <div className={styles.row}>
-            <div className={`${styles.field} small`}>
-              <div className={styles.title}>Expiry Date</div>
+          <div>
+            <div>
+              <div>Expiry Date</div>
               <input
                 placeholder="MM/YY"
                 data-test-id="checkout-expiration-date"
                 required
-                className={`${styles.input} ddl`}
               />
             </div>
-            <div className={`${styles.field} small`}>
-              <div className={styles.title}>CVV Code</div>
+            <div>
+              <div>CVV Code</div>
               <input data-test-id="checkout-security-code" required />
             </div>
           </div>
-          <div className={styles.row}>
-            <div className={styles.field}>
-              <div className={styles.title}>Name on Card</div>
+          <div>
+            <div>
+              <div>Name on Card</div>
               <input data-test-id="checkout-name-on-card" />
             </div>
           </div>

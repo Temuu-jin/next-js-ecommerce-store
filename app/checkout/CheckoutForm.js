@@ -7,7 +7,6 @@ export default function CheckoutForm() {
     <button
       formAction={() => handleSubmit()}
       data-test-id="checkout-confirm-order"
-      className={styles.btn}
     >
       Confirm Order
     </button>

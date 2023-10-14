@@ -5,6 +5,7 @@ export async function getProductsInCart(
   products: Product[],
 ): Promise<CartItem[]> {
   try {
+    console.log('cartData length', cartData.length);
     const cartProductsWithQuantity = await cartData.map(
       (cartItem: CookieObject) => {
         const productId: number = Number(cartItem.id); // Convert cartItem.id to an integer for matching.

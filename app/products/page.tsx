@@ -8,15 +8,12 @@ export default async function Products() {
   const products: Product[] = await getProducts();
 
   return (
-    <main className={styles.main}>
+    <main>
       <h1>Products</h1>
-      <div className={styles['flex-container']}>
+      <div>
         {products.map((product) => {
           return (
-            <div
-              className={styles.productContainer}
-              key={`productPage-${product.id}`}
-            >
+            <div key={`productPage-${product.id}`}>
               <Link
                 href={`/products/${product.id}`}
                 data-test-id={`product-${product.id}`}

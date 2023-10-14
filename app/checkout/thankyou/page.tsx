@@ -13,11 +13,11 @@ export const metadata = {
 export default function Checkout() {
   return (
     <main className={styles.main}>
-      <div className={styles.container}>
+      <div>
         <h1>Thank you for your order</h1>
         <br />
 
-        <p className={styles.center}>Thank you, come again!</p>
+        <p>Thank you, come again!</p>
         <br />
         <Link href="/products" data-test-id="continue-shopping">
           Continue Shopping

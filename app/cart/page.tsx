@@ -3,7 +3,6 @@ import { getProducts } from '../../database/products';
 import { getParsedCart } from '../../util/cookies';
 import { cartSum, getProductsInCart } from '../../util/functions';
 import { CartItem, CookieObject, Product } from '../../util/types';
-import styles from '../page.module.scss';
 import DeleteItem from './DeleteItem';
 import Minus from './Minus';
 import Plus from './Plus';
@@ -30,7 +29,7 @@ export default async function Cart() {
                 key={`user-${item.id}`}
                 data-test-id={`cart-product-${item.id}`}
               >
-                <div>
+                <div className="m-10">
                   <img
                     src={item.image}
                     alt={item.name}

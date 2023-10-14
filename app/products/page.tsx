@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { Product } from '../../util/types';
-import styles from '../page.module.scss';
 
 export default async function Products() {
   const products: Product[] = await getProducts();

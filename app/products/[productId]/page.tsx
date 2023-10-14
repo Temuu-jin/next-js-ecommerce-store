@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
 import { getParsedCart } from '../../../util/cookies';
-import styles from '../../page.module.scss';
 import AddQuantity from './AddQuantitiy';
 
 type ProductPageProps = {

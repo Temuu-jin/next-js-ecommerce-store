@@ -1,18 +1,21 @@
+import './globals.css';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <main>
-      <div>
-        <h1 className="text-center justify-center capitalize">
+      <div className=" align-top ">
+        <h1 className="flex justify-center text-xl">
           Welcome to Yazu OnlineStore
         </h1>
         <br />
 
-        <p>Order Sushi Online</p>
+        <p className="flex justify-center text-l">Order Sushi Online</p>
         <br />
 
-        <Link href="/products">Order Now!</Link>
+        <Link className="flex justify-center text-l" href="/products">
+          Order Now!
+        </Link>
       </div>
     </main>
   );

@@ -1,3 +1,4 @@
+import '../globals.css';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getParsedCart } from '../../util/cookies';
@@ -21,15 +22,16 @@ export default async function Cart() {
   return (
     <main>
       Cart
-      <ul>
+      <ul className="m-auto">
         {productsInCart.map((item) => {
           if (item.quantity > 0) {
             return (
               <li
+                className=" m-auto list-none  content-center mt-5 mb-5 border-2 border-gray-200 rounded-lg"
                 key={`user-${item.id}`}
                 data-test-id={`cart-product-${item.id}`}
               >
-                <div className="m-10">
+                <div className="flex justify-center mt-4">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -38,19 +40,27 @@ export default async function Cart() {
                     data-test-id={`cart-product-image-${item.id}`}
                   />
                 </div>
-                <div>
-                  <h4>{item.name}</h4>
-                  <p>Price: {item.price}</p>
-                  <div style={{ display: 'flex' }}>
+                <div className="flex flex-col  ">
+                  <h4 className="mt-6 text-xl flex justify-center">
+                    {item.name}
+                  </h4>
+                  <p className="text-sm flex justify-center">
+                    Price: {item.price}
+                  </p>
+                  <div className="flex gap-4 justify-center">
                     <Minus productId={item.id} />
-                    Quantity:{' '}
+                    <span className="font-medium text-m">Quantity:</span>
                     <p data-test-id={`cart-product-quantity-${item.id}`}>
                       {item.quantity}
                     </p>
                     <Plus productId={item.id} />
                   </div>
-                  <p>Subtotal: {item.quantity * item.price}</p>
-                  <DeleteItem productId={item.id} />
+                  <p className="flex justify-center ">
+                    Subtotal: {item.quantity * item.price}
+                  </p>
+                  <div className="flex justify-center mt-2">
+                    <DeleteItem productId={item.id} />
+                  </div>
                 </div>
               </li>
             );
@@ -59,12 +69,18 @@ export default async function Cart() {
           }
         })}
       </ul>
-      <p>
+      <p className="flex justify-center mt-2 mb-4">
         Total: <span data-test-id="cart-total">{cartTotal.toFixed(2)}</span>
       </p>
-      <Link href="/checkout" data-test-id="cart-checkout">
-        Checkout
-      </Link>
+      <div className="flex justify-center">
+        <Link
+          className=" text-purple bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xl px-2 py-1.3 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          href="/checkout"
+          data-test-id="cart-checkout"
+        >
+          Checkout
+        </Link>
+      </div>
     </main>
   );
 }

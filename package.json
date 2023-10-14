@@ -10,7 +10,6 @@
     "migrate": "ley --require tsm"
   },
   "dependencies": {
-    "@types/sass": "^1.45.0",
     "dotenv": "^16.3.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
@@ -19,7 +18,6 @@
     "postgres": "^3.3.5",
     "react": "^18.2.0",
     "react-dom": "^18",
-    "sass": "^1.69.0",
     "secure-json-parse": "^2.7.0",
     "server-only": "^0.0.1",
     "sharp": "^0.32.6",
@@ -28,10 +26,13 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@playwright/test": "^1.38.1",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.8.3",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
+    "autoprefixer": "^10.4.16",
     "eslint-config-upleveled": "^5.1.0",
+    "postcss": "^8.4.31",
     "stylelint": "^15.10.3",
     "stylelint-config-upleveled": "^1.0.2",
     "tailwindcss": "^3.3.3",

@@ -1,3 +1,4 @@
+import '../../globals.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
@@ -40,18 +41,24 @@ export default async function ProductPage(props: ProductPageProps) {
 
   return (
     <main>
-      <div>
-        <h1>{singleProduct.name}</h1>
-        <p>{singleProduct.description}</p>
-        <Image
-          src={singleProduct.image}
-          alt={singleProduct.name}
-          width={200}
-          height={200}
-          data-test-id="product-image"
-          unoptimized
-        />
-        €<p data-test-id="product-price">{singleProduct.price}</p>
+      <div className="flex-col">
+        <h1 className="flex justify-center text-xl">{singleProduct.name}</h1>
+        <p className="flex justify-center text-xs">
+          {singleProduct.description}
+        </p>
+        <div className="flex justify-center mt-4 text-black">
+          <Image
+            src={singleProduct.image}
+            alt={singleProduct.name}
+            width={200}
+            height={200}
+            data-test-id="product-image"
+            unoptimized
+          />
+        </div>
+        <span className="flex justify-center">
+          €<p data-test-id="product-price">{singleProduct.price}</p>
+        </span>
       </div>
       <AddQuantity productId={productId} cookieData={cookieData} />
     </main>

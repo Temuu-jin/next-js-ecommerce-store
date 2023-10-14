@@ -1,3 +1,4 @@
+import '../globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
@@ -8,27 +9,30 @@ export default async function Products() {
 
   return (
     <main>
-      <h1>Products</h1>
-      <div>
-        {products.map((product) => {
-          return (
-            <div key={`productPage-${product.id}`}>
-              <Link
-                href={`/products/${product.id}`}
-                data-test-id={`product-${product.id}`}
-              >
-                <Image
-                  alt="Product"
-                  src={product.image}
-                  width={120}
-                  height={100}
-                  unoptimized
-                />
-                <h1>{product.name}</h1>
-              </Link>
-            </div>
-          );
-        })}
+      <h1 className="block text-center">Products</h1>
+      <div className="items-start">
+        <div className="flex justify-center ">
+          {products.map((product) => {
+            return (
+              <div className="list-none" key={`productPage-${product.id}`}>
+                <Link
+                  href={`/products/${product.id}`}
+                  data-test-id={`product-${product.id}`}
+                >
+                  <Image
+                    className="w-36 h-36 rounded-lg object-cover p-8"
+                    alt="Product"
+                    src={product.image}
+                    width={120}
+                    height={100}
+                    unoptimized
+                  />
+                  <h1 className="text-center pt-4">{product.name}</h1>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </main>
   );

@@ -25,12 +25,12 @@
     "server-only": "^0.0.1",
     "sharp": "^0.32.6",
     "tailwindcss": "^3.3.3",
+    "@tailwindcss/typography": "^0.5.10",
     "tsm": "^2.3.0"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@playwright/test": "^1.38.1",
-    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.8.3",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",

@@ -22,7 +22,9 @@
     "secure-json-parse": "^2.7.0",
     "server-only": "^0.0.1",
     "sharp": "^0.32.6",
-    "tsm": "^2.3.0"
+    "tsm": "^2.3.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
@@ -33,10 +35,8 @@
     "@types/react-dom": "^18.2.11",
     "autoprefixer": "^10.4.16",
     "eslint-config-upleveled": "^5.1.0",
-    "postcss": "^8.4.31",
     "stylelint": "^15.10.3",
     "stylelint-config-upleveled": "^1.0.2",
-    "tailwindcss": "^3.3.3",
     "typescript": "5.2.2"
   }
 }

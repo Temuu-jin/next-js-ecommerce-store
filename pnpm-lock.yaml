@@ -29,9 +29,6 @@ dependencies:
   postcss:
     specifier: ^8.4.31
     version: 8.4.31
-  postcss-import:
-    specifier: ^15.1.0
-    version: 15.1.0(postcss@8.4.31)
   postgres:
     specifier: ^3.3.5
     version: 3.4.0

@@ -37,7 +37,6 @@ export default async function Cart() {
                     alt={item.name}
                     width={200}
                     height={200}
-                    data-test-id={`cart-product-image-${item.id}`}
                   />
                 </div>
                 <div className="flex flex-col  ">

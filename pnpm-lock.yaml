@@ -19,7 +19,11 @@ dependencies:
     version: 0.8.1
   next:
     specifier: 13.5.4
+<<<<<<< HEAD
     version: 13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)
+=======
+    version: 13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.0)
+>>>>>>> parent of f95d55c (Fix dependencies)
   postgres:
     specifier: ^3.3.5
     version: 3.3.5
@@ -29,6 +33,12 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+<<<<<<< HEAD
+=======
+  sass:
+    specifier: ^1.69.0
+    version: 1.69.0
+>>>>>>> parent of f95d55c (Fix dependencies)
   secure-json-parse:
     specifier: ^2.7.0
     version: 2.7.0
@@ -49,9 +59,12 @@ devDependencies:
   '@playwright/test':
     specifier: ^1.38.1
     version: 1.38.1
+<<<<<<< HEAD
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.3)
+=======
+>>>>>>> parent of f95d55c (Fix dependencies)
   '@types/node':
     specifier: 20.8.3
     version: 20.8.3
@@ -61,6 +74,7 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18.2.11
     version: 18.2.11
+<<<<<<< HEAD
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
@@ -70,6 +84,11 @@ devDependencies:
   postcss:
     specifier: ^8.4.31
     version: 8.4.31
+=======
+  eslint-config-upleveled:
+    specifier: ^5.1.0
+    version: 5.1.0(@babel/eslint-parser@7.22.15)(@next/eslint-plugin-next@13.5.4)(@types/eslint@8.44.3)(@types/node@20.8.3)(@types/react-dom@18.2.11)(@types/react@18.2.25)(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-jsx-expressions@1.3.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-security@1.7.1)(eslint-plugin-sonarjs@0.21.0)(eslint-plugin-testing-library@6.0.2)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-upleveled@2.1.9)(eslint@8.51.0)(typescript@5.2.2)
+>>>>>>> parent of f95d55c (Fix dependencies)
   stylelint:
     specifier: ^15.10.3
     version: 15.10.3(typescript@5.2.2)
@@ -1035,6 +1054,16 @@ packages:
       csstype: 3.1.2
     dev: true
 
+<<<<<<< HEAD
+=======
+  /@types/sass@1.45.0:
+    resolution: {integrity: sha512-jn7qwGFmJHwUSphV8zZneO3GmtlgLsmhs/LQyVvQbIIa+fzGMUiHI4HXJZL3FT8MJmgXWbLGiVVY7ElvHq6vDA==}
+    deprecated: This is a stub types definition. sass provides its own type definitions, so you do not need this installed.
+    dependencies:
+      sass: 1.69.0
+    dev: false
+
+>>>>>>> parent of f95d55c (Fix dependencies)
   /@types/scheduler@0.16.4:
     resolution: {integrity: sha512-2L9ifAGl7wmXwP4v3pN4p2FLhD0O1qsJpvKmNin5VA8+UvNVb447UDaAEV6UdrkA+m/Xs58U1RFps44x6TFsVQ==}
     dev: true
@@ -4435,7 +4464,11 @@ packages:
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+<<<<<<< HEAD
   /next@13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0):
+=======
+  /next@13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.0):
+>>>>>>> parent of f95d55c (Fix dependencies)
     resolution: {integrity: sha512-+93un5S779gho8y9ASQhb/bTkQF17FNQOtXLKAj3lsNgltEcF0C5PMLLncDmH+8X1EnJH1kbqAERa29nRXqhjA==}
     engines: {node: '>=16.14.0'}
     hasBin: true
@@ -4457,6 +4490,10 @@ packages:
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+<<<<<<< HEAD
+=======
+      sass: 1.69.0
+>>>>>>> parent of f95d55c (Fix dependencies)
       styled-jsx: 5.1.1(@babel/core@7.23.0)(react@18.2.0)
       watchpack: 2.4.0
     optionalDependencies:
@@ -5198,6 +5235,19 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
+<<<<<<< HEAD
+=======
+  /sass@1.69.0:
+    resolution: {integrity: sha512-l3bbFpfTOGgQZCLU/gvm1lbsQ5mC/WnLz3djL2v4WCJBDrWm58PO+jgngcGRNnKUh6wSsdm50YaovTqskZ0xDQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.4
+      source-map-js: 1.0.2
+    dev: false
+
+>>>>>>> parent of f95d55c (Fix dependencies)
   /saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
